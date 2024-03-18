@@ -73,6 +73,16 @@ public class BackTracking {
             System.out.println();
         }
     }
+    public static int Giray(int i,int j,int n,int m) {
+        if(i==n-1 && j==m-1) {            //this code time comp is O(n^2 + m^2)
+            return 1;
+        }else if (i==n || j==m){
+            return 0;
+        }                                   // math formula and this math formula time comp  O(n+m)
+        int w1 = Giray(i+1,j,n,m);          //  (n-1)(m-1)!
+        int w2 = Giray(i,j+1,n,m);          //---------------------
+        return w1+w2;                       //(n-1)! (m-1)!
+    }
     
     public static void main(String[] args) {
         // int a[]= new int[5];
@@ -80,14 +90,17 @@ public class BackTracking {
         // printarr(a);
         // subset("abc", "", 0);
 
-        int n=5;
-        char borad [][] = new char[n][n];
-        for(int i=0;i<n;i++){
-            for(int j=0;j<n;j++){
-                borad[i][j] = 'X';
-            }
-        }
+        // int n=5;
+        // char borad [][] = new char[n][n];
+        // for(int i=0;i<n;i++){
+        //     for(int j=0;j<n;j++){
+        //         borad[i][j] = 'X';
+        //     }
+        // }
+        // nQueen(borad, 0);
 
-        nQueen(borad, 0);
+        System.out.println(Giray(0,0,10,10));
+
+
     }
 }
