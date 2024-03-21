@@ -156,7 +156,7 @@ public class A10to1 {
         // System.out.println(tillngProb(5));
         
         // String str = "druvdishh";
-        // StringBuilder news = new StringBuilder("");
+        // StringBuilder news = new StringBuilder(""); 
         // removetoDublicet(str, 0, news, new boolean[26]);
         
         // System.out.println(friendtsPair(4));
