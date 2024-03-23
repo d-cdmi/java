@@ -135,23 +135,110 @@ public class LinkedList {
         return helper(head ,key);
     }
 
+    public void Rever(){
+        Node prev = null;
+        Node curr = tail = head;
+        Node next ;
+        
+        while (curr != null) {
+            next = curr.next;
+            curr.next =prev;
+            prev =curr;
+            curr =next;
+        }
+        head =prev;
+    }
+
+    public void deleteLastto(int n) {
+        int sz = 0;
+        Node temp = head;
+        while (temp != null) {
+            temp = temp.next;
+            sz++;
+        }
+        if(n == sz ) {
+            head =head.next;
+            return ;
+        }
+
+        int i=1;
+        int iToend = sz-n;
+        Node prev = head;
+        while (i<iToend) {
+            prev = prev.next;
+            i++;
+        }
+        prev.next = prev.next.next;
+        return;
+    }
+
+    public Node findMid (Node head) {
+        Node slow = head;
+        Node fast = head;
+    
+        while (fast != null && fast.next != null ) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return slow;   //my mid 
+    
+    }
+
+    public boolean checkPalindrome() {
+        if (head == null || head.next == null) {
+            return true;
+        }
+
+        Node mid = findMid(head);
+
+        Node prev = null;
+        Node curr = mid;
+        Node next;
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        Node right = prev;
+        Node left = head;
+
+        while (right != null) {
+            if(left.data != right.data) {
+                return false;
+            }
+            left = left.next;
+            right = right.next;
+        }
+
+        return true;
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
-        ll.addfist(2);
+        ll.addfist(2);      
         ll.addfist(1);
-        ll.addlast(3);
+        ll.addlast(1);
         ll.addlast(4);
+        ll.addlast(5);
 
         // ll.print();
         // ll.removeFist();
         // ll.print();
         // ll.removeLast();
         // ll.print();
+        // System.out.println(ll.ReSerach  (4 ));
+        // System.out.println(ll.ReSerach(11));
         // System.out.println(ll.size);
+        
+        // ll.print();
+        // ll.Rever();
+        // ll.deleteLastto(3);
+            
+        ll.print();
   
-        System.out.println(ll.ReSerach  (4 ));
-        System.out.println(ll.ReSerach(11));
-  
-  
+        System.out.println(ll.checkPalindrome());
     }
 }
