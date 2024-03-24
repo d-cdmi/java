@@ -1,4 +1,4 @@
-import java.time.Instant;
+import java.time.*;
 
 public class arry {
 
@@ -41,7 +41,7 @@ public class arry {
     //         if (number[mid]==key){
     //             return mid;
     //         }
-    //         else if(number[mid]<key){     //true  7<8
+    //         else if(number[mid]<key){       //true  7<8
     //             start = mid +1;             //start = 5
     //         }else{
     //             end = mid -1;
@@ -202,43 +202,7 @@ public class arry {
 
             
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     
     
